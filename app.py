@@ -106,11 +106,11 @@ if st.session_state["sensor_storage"]:
             "Median Temperature"
         ],
         "Value": [
-            round(sensor_data.average_temperature(), 2),
-            round(sensor_data.max_humidity(), 2),
-            round(sensor_data.min_humidity(), 2),
-            round(sensor_data.total_co2(), 2),
-            round(sensor_data.median_temperature(), 2)
+            str(round(sensor_data.average_temperature(), 2)) + " ℃",
+            str(round(sensor_data.max_humidity(), 2)) + " %",
+            str(round(sensor_data.min_humidity(), 2)) + " %",
+            str(round(sensor_data.total_co2(), 2)) + " ppm",
+            str(round(sensor_data.median_temperature(), 2)) + " ℃"
         ]
     })
 
@@ -134,7 +134,7 @@ if st.session_state["sensor_storage"]:
 
     avg_sensor_df["Average Temperature (°C)"] = (
         avg_sensor_df["Average Temperature (°C)"].round(2)
-    )
+    ) 
 
     st.subheader("Average Temperature Per Sensor")
     st.dataframe(

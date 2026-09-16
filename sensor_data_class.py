@@ -4,11 +4,11 @@ import numpy as np
 
 @dataclass
 class SensorData:
-    sensor_id: np.ndarray
-    timestamp: np.ndarray
-    temperature: np.ndarray
-    humidity: np.ndarray
-    co2: np.ndarray
+    sensor_id: np.str_
+    timestamp: np.datetime64
+    temperature: np.float32
+    humidity: np.float32
+    co2: np.float32
 
     @classmethod
     def load_csv(cls, filename):
